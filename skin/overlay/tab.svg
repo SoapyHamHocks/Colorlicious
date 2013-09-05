@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+	<clipPath id="osx-tab-ontop-left-curve-clip-path" clipPathUnits="userSpaceOnUse">
+		<path d="M0,24v-1h1h2v-1H1c2.209,0,4-1.791,4-4V4c0-2.209,1.791-4,4-4h3v24H0z"/>
+	</clipPath>
+	<clipPath id="osx-tab-ontop-right-curve-clip-path" clipPathUnits="userSpaceOnUse">
+		<path d="M0,24V0h3c2.209,0,4,1.791,4,4v14c0,2.209,1.791,4,4,4H9v1h2h1v1H0z"/>
+	</clipPath>
+</svg>

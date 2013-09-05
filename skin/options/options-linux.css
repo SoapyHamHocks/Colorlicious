@@ -1,0 +1,7 @@
+@import url(options-mac.css);
+
+/* no button colouring on linux (due to system styling and multitude of linux themes) */
+#buttons-pane-radio
+{
+	display: none;
+}

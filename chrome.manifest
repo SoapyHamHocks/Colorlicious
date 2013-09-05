@@ -1,0 +1,7 @@
+content colorlicious	chrome/content/
+skin	colorlicious	classic/1.0 skin/
+override chrome://colorlicious/skin/options/options.css skin/options/options-mac.css OS=Darwin
+override chrome://colorlicious/skin/options/options.css skin/options/options-linux.css OS=Linux
+locale	colorlicious	en-US locale/en-US/
+locale	colorlicious	en-AU locale/en-AU/
+locale	colorlicious	en-GB locale/en-AU/

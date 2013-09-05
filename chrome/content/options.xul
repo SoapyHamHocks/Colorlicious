@@ -1,0 +1,196 @@
+<?xml version='1.0'?>
+<!DOCTYPE page [
+<!ENTITY % translations SYSTEM "chrome://colorlicious/locale/options.dtd">
+%translations;
+<!ENTITY % dlgbuttons SYSTEM "chrome://global/locale/dialogOverlay.dtd">
+%dlgbuttons;
+]>
+<?xml-stylesheet href='chrome://colorlicious/skin/options/options.css' type='text/css'?>
+<page
+	id='colorlicious-options'
+	buttons='none'
+	title='&title;'
+	disablefastfind="true"
+	onkeypress='popupKeyPress(event)'
+	onload='init();'
+	role='application'
+	hasBrowserHandlers="true"
+	xmlns:xhtml='http://www.w3.org/1999/xhtml'
+	xmlns:svg='http://www.w3.org/2000/svg'
+	xmlns='http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul'>
+	<xhtml:link rel='shortcut icon' href='chrome://colorlicious/skin/options/favicon.png'/>
+	<script type='application/x-javascript' src='chrome://colorlicious/content/options.js'/>
+	<keyset>
+		<key key='f' modifiers='accel'/>
+	</keyset>
+	<commandset>
+		<command id='cmd_back' disabled='false' oncommand='leftPaneDeck(0)'/>
+		<command id='cmd_mainPage' disabled='false' oncommand='fullscreenPopup.hide();'/>
+	</commandset>
+	<stringbundleset>
+		<stringbundle id="colorlicious-strings" src="chrome://colorlicious/locale/options.properties"/>
+	</stringbundleset>
+	<stack id='main-stack' orient='vertical' flex='1'>
+		<hbox>
+			<vbox id='page-navigation-pane'>
+				<hbox class='banner'>
+					<button id='banner-back-button' _hidden='true' class='back-button' command='cmd_back'/>
+					<label id='banner-title' class='banner-title inverted' value='Colorlicious'/>
+				</hbox>
+
+				<deck id='leftPane-deck'>
+					<vbox id='leftPane-cats' class='vertical-radiogroup'>
+						<button id='colors-header-button' pack='none' class='pane-radio' label='&cat.colors;' oncommand='leftPaneDeck(1);'/>
+						<button id='settings-header-button' pack='none' class='pane-radio' label='&cat.settings;' oncommand='fullscreenPopup.show(0);'/>
+						<button id='feedback-header-button' pack='none' class='pane-radio' label='&cat.feedback;' oncommand='fullscreenPopup.show(2)'/>
+					</vbox>
+					<radiogroup id='pane-settings-radiogroup' class='vertical-radiogroup' oncommand='switchDeck(this.value);'>
+						<radio class='pane-radio' label='&selectedTab;' value='0'/>
+						<radio class='pane-radio' label='&inactiveTab;' value='1'/>
+						<radio id='buttons-pane-radio' class='pane-radio' label='&buttons;' value='2'/>
+						<radio id='appbutton-pane-radio' class='pane-radio' label='&appbutton;' value='3'/>
+					</radiogroup>
+				</deck>
+			</vbox>
+			<deck id='main-deck' flex='1' selectedIndex='4'>
+				<vbox id='selectedtabContainer'>
+					<description value='&colorpreset.header;' class='header'/>
+					<vbox id='selectedtab-presets-container'/>
+					<description value='&color;' class='header'/>
+					<hbox id='selectedtab-painbucket-container'/>
+				</vbox>
+				<vbox id='tabContainer'>
+					<description value='&colorpreset.header;' class='header'/>
+					<vbox id='tab-presets-container'/>
+					<description value='&color;' class='header'/>
+					<hbox id='tab-painbucket-container'/>
+				</vbox>
+				<vbox id='buttonContainer' transitioned='true'>
+					<description value='&button.warning;' class='message'/>
+					<description value='&colorpreset.header;' class='header'/>
+					<vbox id='button-presets-container'/>
+					<description value='&color;' class='header'/>
+					<hbox id='button-painbucket-container'/>
+				</vbox>
+				<vbox id='appmenuContainer'>
+					<description value='&colorpreset.header;' class='header'/>
+					<vbox id='appmenu-presets-container'/>
+					<description value='&color;' class='header'/>
+					<hbox id='appmenu-painbucket-container'/>
+				</vbox>
+				<vbox id='topsettingsContainer'>
+					<description value='&topsettings.title0;' class='header'/>
+					<hbox id='recentpresets-hbox'>
+					</hbox>
+					<label class='text-link' value='Show more presets' onclick='fullscreenPopup.show(0);'/>
+					<description value='&topsettings.title1;' class='header'/>
+					<hbox id='topsettings-hbox'>
+						<vbox class='topSetting-backgroundContainer'>
+							<button id='topsettings-selectedtabs' pack='start' align='end' class='topSettings' label='&selectedTab;' oncommand=' topSettings("toolbars")'/>
+						</vbox>
+						<vbox class='topSetting-backgroundContainer'>
+							<button id='topsettings-tabs' pack='start' align='end' class='topSettings' label='&inactiveTab;' oncommand='topSettings("tabs")'/>
+						</vbox>
+						<vbox class='topSetting-backgroundContainer'>
+							<button id='topsettings-toolbarbuttons' pack='start' align='end' class='topSettings' label='&buttons;' oncommand='topSettings("buttons")'/>
+						</vbox>
+					</hbox>
+				</vbox>
+			</deck>
+		</hbox>
+		
+		<deck hidden='true' id='fullpage-popup-deck'>
+			<vbox class='fullpage-popup' id='page-settings-pane'>
+				<hbox class='banner'>
+					<button class='back-button' command='cmd_mainPage'/>
+					<label class='banner-title inverted' value='&cat.settings;'/>
+				</hbox>
+				<vbox>
+					<label value='&preset.header;' class='header'/>
+					<hbox id='settings-pane-presets'/>
+					<label value='&preset.import;' class='header'/>
+					<hbox>
+						<button class='button' label='&preset.browse;…' oncommand='bPreset.importPreset()'/>
+					</hbox>
+					<label value='&settings.more;' class='header'/>
+					<label class='text-link' value='&preset.manage;' onclick='fullscreenPopup.show(1);'/>
+					<hbox>
+						<button class='button' label='&reset.long;' oncommand='floatingPopup.show(0);'/>
+					</hbox>
+				</vbox>
+			</vbox>
+			<vbox class='fullpage-popup' id='page-importPrefs-pane'>
+				<hbox class='banner'>
+					<button class='back-button' oncommand='fullscreenPopup.show(0);'/>
+					<label class='banner-title inverted' value='&preset.manage;'/>
+					<spacer flex='1'/>
+					<hbox hidden='false' id='manage-presets-buttons'>
+						<button id='preset-export-button' class='banner-button-vertical inverted' pack='center' label='&preset.export;…' oncommand='managePresets._export()'/>
+						<button id='preset-remove-button' class='banner-button-vertical inverted' pack='center' label='&preset.remove;' oncommand='managePresets._remove()'/>
+					</hbox>
+				</hbox>
+				<vbox>
+					<label id='manage-presets-header' value='&preset.warning;'/>
+					<hbox id='manage-presets-container' class='block-me'/>
+				</vbox>
+			</vbox>
+			<vbox class='fullpage-popup' id='page-support-pane'>
+				<hbox class='banner'>
+					<button class='back-button' oncommand='fullscreenPopup.hide()'/>
+					<label class='banner-title inverted' value='&cat.feedback;'/>
+				</hbox>
+				<vbox>
+					<label value='&feedback.title0;' class='header'/>
+					<description>
+						&feedback.desc0;
+					</description>
+					<label class='text-link' value='&feedback.link0;' href='https://addons.mozilla.org/en-US/firefox/addon/colorlicious/reviews/add'/>
+					<label class='text-link' value='&feedback.link1;' href='https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=UAJVQHSLTTL9Q&amp;lc=AU&amp;currency_code=AUD&amp;item_name=Colorlicious'/>
+					<label value='&feedback.title1;' class='header'/>
+					<description>
+						&feedback.desc1;
+					</description>
+					<label class='text-link' value='&feedback.link2;' href='http://code.google.com/p/colorlicious/issues/list'/>
+					<label class='text-link' value='&feedback.link3;' href='mailto:soapyspew@gmail.com'/>
+				</vbox>
+			</vbox>
+		</deck>
+		<vbox class='popup-container' id='popup-container-colorpicker' _hidden='true'/>
+		<vbox class='popup-container' id='popup-container' _hidden='true'>
+			<deck id='floating-popup-deck' selectedIndex='0'>
+				<hbox class='floating-popup'>
+					<vbox>
+						<description class='header popup' value='&content.reset.des;'/>
+						<description class='bullet' value='&content.reset.bullet;'/>
+						<description class='bullet' value='&content.reset.bullet1;'/>
+						<spacer class='popup-spacer' flex='1'/>
+						<hbox class='button-hbox-container' id='reset-hbox-container'>
+							<button id='reset-dummy-button'/>
+							<button id='reset-accept-button' class='button' label='&okButton.label;' default='true' oncommand='floatingPopup.accept(0)'/>
+							<button class='button' label='&cancelButton.label;' oncommand='floatingPopup.hide()'/>
+						</hbox>
+					</vbox>
+				</hbox>
+				
+				<hbox class='floating-popup'>
+					<vbox>
+						<description class='header popup' value='&preset.name;'/>
+						<textbox class='textbox' id='preset-name-textbox'/>
+						<description id='preset-warning' class='warning' _hidden='true'>
+							&invalidvalue;
+						</description>
+						<spacer class='popup-spacer' flex='1'/>
+						<hbox class='button-hbox-container'>
+							<button id='preset-accept-button' class='button' label='&okButton.label;' default='true' oncommand='floatingPopup.accept(1)'/>
+							<button class='button' label='&cancelButton.label;' oncommand='floatingPopup.hide()'/>
+						</hbox>
+					</vbox>
+				</hbox>
+				
+				<hbox class='floating-popup'>
+					<vbox id='general-message-flopping_popup'/>
+				</hbox>
+			</deck>
+		</vbox>
+	</stack>
+</page>

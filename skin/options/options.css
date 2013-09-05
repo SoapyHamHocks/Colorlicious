@@ -1,0 +1,1026 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+html|link {
+  display: none;
+}
+
+/* Hack to get Segoe UI Light to render properly on Windows 8 */
+
+@font-face
+{
+	font-family: "Segoe UI Light";
+	src: local("Segoe UI Light"), local("Segoe UI"), local("Ubuntu Light"), local("arial"), local("sans-serif");
+}
+
+@font-face
+{
+	font-family: "Segoe UI Semilight";
+	src: local("Segoe UI Semilight"), local("Segoe UI"), local("Ubuntu Light"), local("arial"), local("sans-serif");
+}
+
+page
+{
+	font-family: "Segoe UI", "Ubuntu", "arial", "sans-serif";
+}
+
+*
+{
+  -moz-appearance: none;
+  text-shadow: none;
+  box-shadow: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: none padding-box;
+}
+
+.inverted
+{
+	color: #fff;
+}
+
+/* :::::: Header/Banner :::::: */
+
+.banner-button-vertical
+{
+	-moz-box-orient: vertical;
+	font-size: 1em;
+	font-family: "Segoe UI Semilight";
+}
+
+.banner-button-vertical > .button-box
+{	/* 1.5 top */
+    padding: 0 !important;
+}
+
+.banner-button-vertical[disabled]
+{
+	opacity: .4;
+}
+
+.banner-button-vertical,
+.back-button
+{
+    padding: 1.5em 1.2em;
+	list-style-image: url(buttons.png);
+}
+
+.banner-button-vertical > .button-box > .button-text
+{
+    transform: translateY(.5em);
+}
+
+.back-button[_hidden=true]
+{
+	opacity: 0;
+	-moz-user-focus: ignore;
+	pointer-events: none;
+}
+
+.back-button
+{
+	min-width: 0;
+	-moz-padding-end: .6em;
+	-moz-image-region: rect(0 30px 30px 0);
+}
+
+.back-button:hover
+{
+	-moz-image-region: rect(0 60px 30px 30px);
+}
+
+.back-button:hover:active
+{
+	-moz-image-region: rect(0 90px 30px 60px);
+}
+
+#preset-remove-button
+{
+	-moz-image-region: rect(30px 30px 60px 0);
+}
+
+#preset-remove-button:not([disabled]):hover
+{
+	-moz-image-region: rect(30px 60px 60px 30px);
+}
+
+#preset-remove-button:not([disabled]):hover:active
+{
+	-moz-image-region: rect(30px 90px 60px 60px);
+}
+
+#preset-export-button
+{
+	-moz-image-region: rect(60px 30px 90px 0);
+}
+
+#preset-export-button:not([disabled]):hover
+{
+	-moz-image-region: rect(60px 60px 90px 30px);
+}
+
+#preset-export-button:not([disabled]):hover:active
+{
+	-moz-image-region: rect(60px 90px 90px 60px);
+}
+
+.banner-title
+{
+	font-size: 1.7em;
+	font-family: "Segoe UI Light";
+	-moz-margin-end: 1em;
+	margin-bottom: .2em;
+}
+
+/* ::: Menus ::: */
+
+menupopup
+{
+	border: 2px solid #2A2A2A;
+	background-color: #fff;
+}
+
+menuitem
+{
+	text-align: start;
+	font-size: 14px;
+	padding: 6px 15px;
+	color: #000;
+}
+
+menuitem[disabled]
+{
+	color: #aaa;
+}
+
+menuitem:not([disabled]):hover
+{
+	background-color: #F3F3F3;
+}
+
+menuitem:not([disabled]):hover:active
+{
+	color: #fff;
+	background-color: #005EAA;
+}
+
+.menuseparator
+{
+	max-height: 1px;
+	height: 1px;
+	min-height: 1px;
+	background-color: #666666;
+	margin: 1em 16px;
+}
+
+.separator
+{
+	max-height: 1px;
+	height: 1px;
+	min-height: 1px;
+	background: rgba(255,255,255,.5);
+	margin: 1em calc( 4em - 3px );
+}
+
+.color-preset,
+.color-preset > .button-box
+{
+	padding: 0;
+	margin: 0;
+	height: 50px;
+	min-height: 50px;
+	max-height: 50px;
+	width: 50px;
+	min-width: 50px;
+	max-width: 50px;
+	background-color: #DEDEDE;
+}
+
+.color-preset > .button-box
+{
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, .25) inset;
+}
+
+.color-presets-container
+{
+	margin: 0 0 16px;
+}
+
+.color-preset:hover
+{
+    box-shadow: 0 0 0 4px #DEDEDE;
+}
+
+.color-preset:hover:active > .button-box
+{
+	min-width: 46px;
+	min-height: 46px;
+	margin: 2px;
+}
+
+.color-presets-container .color-preset:not(:last-child)
+{
+	-moz-margin-end: 6px;
+}
+
+.color-presets-container > hbox:not(:last-child)
+{
+	margin-bottom: 6px;
+}
+
+.color-preset-0 > .button-box
+{
+	background-color: #DC4FAD;
+}
+
+.color-preset-1 > .button-box
+{
+	background-color: #AC193D;
+}
+
+.color-preset-2 > .button-box
+{
+	background-color: #D24726;
+}
+
+.color-preset-3 > .button-box
+{
+	background-color: #FF8F32;
+}
+
+.color-preset-4 > .button-box
+{
+	background-color: #82BA00;
+}
+
+.color-preset-5 > .button-box
+{
+	background-color: #008A17;
+}
+
+.color-preset-6 > .button-box
+{
+	background-color: #03B3B2;
+}
+
+.color-preset-7 > .button-box
+{
+	background-color: #008299;
+}
+
+.color-preset-8 > .button-box
+{
+	background-color: #5DB2FF;
+}
+
+.color-preset-9 > .button-box
+{
+	background-color: #0074C6;
+}
+
+.color-preset-10 > .button-box
+{
+	background-color: #4617B4;
+}
+
+.color-preset-11 > .button-box
+{
+	background-color: #8C0095;
+}
+
+.color-preset-12 > .button-box
+{
+	background-color: #004B8B;
+}
+
+.color-preset-13 > .button-box
+{
+	background-color: #001940;
+}
+
+.color-preset-14 > .button-box
+{
+	background-color: #570000;
+}
+
+.color-preset-15 > .button-box
+{
+	background-color: #380000;
+}
+
+.color-preset-16 > .button-box
+{
+	background-color: #585858;
+}
+
+.color-preset-17 > .button-box
+{
+	background-color: #000;
+}
+
+#pane-settings >  vbox
+{
+	background-color: #3176AE;
+}
+
+.banner
+{
+	background-color: transparent;
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    padding-top: 1em;
+	-moz-box-align: center;
+}
+
+.fullpage-popup > .banner,
+#page-navigation-pane
+{
+    background-color: #3176AE;
+}
+
+#page-navigation-pane
+{
+	min-width: 20em;
+}
+
+#leftPane-deck
+{
+	background-color: transparent;
+}
+
+.pane-radio
+{
+	color: #fff;
+	padding: 12px calc( 4em - 4px ) 14px;
+	font-family: "Segoe UI Semilight";
+	font-size: 1em;
+}
+
+.pane-radio:not([selected]):not([disabled]):hover
+{
+	background-color: #779EBF;
+}
+
+radio.pane-radio[selected],
+button.pane-radio:not([disabled]):hover:active
+{
+	background-color: #005EAA;
+}
+
+.pane-radio:hover:active
+{
+	transform: scale(.97);
+}
+
+#main-deck > vbox
+{
+	padding: 3em;
+	-moz-padding-end: 0;
+}
+
+description,
+checkbox
+{
+	font-family: "Segoe UI Semilight";
+}
+
+#main-deck > vbox
+{
+	overflow: auto;
+}
+
+.header
+{
+	font-family: "Segoe UI Light";
+	font-size: 1.7em;
+	font-weight: normal;
+	margin-bottom: .7em;
+	color: #005EAA;
+}
+
+label.header:not(:first-child)
+{
+	margin-top: 1em;
+}
+
+.header.sub
+{
+	font-family: "Segoe UI Semilight";
+	font-size: 1em;
+	color: #000;
+}
+
+.header.popup
+{
+	font-family: "Segoe UI Semilight";
+	font-size: 1.3em;
+	margin-bottom: 1em;
+}
+
+.popup-radiogroup
+{
+	max-width: 0;
+	-moz-box-flex: 1;
+}
+
+.warning
+{
+	color: #FF7E28;
+	padding: 0 0 .4em;
+	transition: .1s ease-in;
+}
+
+.warning[_hidden=true]
+{
+	opacity: 0;
+}
+
+description
+{
+	cursor: default;
+	max-width: 40em;
+}
+
+.button-hbox-container
+{
+	-moz-box-pack: end;
+	margin-top: 1em;
+}
+
+/* ::: Color Picker popup ::: */
+
+.colorPicker-hue,
+.colorPicker-saturation
+{
+	margin: 7px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.colorPicker-hue
+{
+	cursor: url(colorpicker/picker-cursor.png) 7 7, default;
+	z-index: 0;
+	background-image: url(colorpicker/picker-bg-small.png);
+	box-shadow: 0 0 0 2px #e3e3e3;
+}
+
+.colorPicker-saturation
+{
+	pointer-events: none;
+	z-index: 1;
+	background-image: url(colorpicker/picker-bg-small-unsat.png);
+	opacity: .5;
+}
+
+.colorPicker-stack
+{
+	-moz-box-orient: vertical;
+	-moz-box-pack: center;
+	-moz-box-align: center;
+	height: 374px;
+	width: 374px;
+}
+
+.colorPicker-cursor
+{
+	pointer-events: none;
+	z-index: 2;
+	background-image: url(colorpicker/picker-cursor.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.colorPicker-satStack,
+.colorPicker-opacityStack
+{
+	padding: 0 11px;
+	height: 374px;
+	-moz-margin-start: .5em;
+    background-image: -moz-image-rect(url(colorpicker/slider-thumb.png), 0, 43, 7, 0);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.colorPicker-satStack[dragging],
+.colorPicker-opacityStack[dragging]
+{
+    background-image: -moz-image-rect(url(colorpicker/slider-thumb.png), 7, 43, 14, 0);
+}
+
+.colorPicker-saturation-slider,
+.colorPicker-opacity-slider
+{
+	margin: 7px 0;
+	pointer-events: none;
+	width: 18px;
+	box-shadow: 0 0 0 2px #e3e3e3;
+}
+
+.colorPicker-previewContainer
+{
+	padding-top: 13px;
+	-moz-margin-start: 25px;
+	margin-bottom: 6px;
+}
+
+.colorPicker-previewContainer spacer
+{
+	width: .3em;
+}
+
+.colorPicker-preview
+{
+	height: 100px;
+	margin-bottom: 1em;
+	border: 2px solid #e3e3e3;
+}
+
+.textbox
+{
+	-moz-appearance: none;
+	margin: 0;
+	border: 1px solid #BABABA;
+	color: #666;
+	padding: 0 6px 2px;
+	height: 28px;
+	min-height: 28px;
+	max-height: 28px;
+	font-family: "Segoe UI Semilight";
+}
+
+.textbox .spinbuttons-box
+{
+    display: none;
+}
+
+textbox.combined html|*.textbox-input,
+.opacity-textbox html|*.textbox-input
+{
+	padding: 0 6px 2px !important;
+	-moz-padding-end: .5em !important;
+}
+
+.hex-textbox
+{
+	max-width: 5.5em;
+	text-align: end;
+}
+
+.opacity-textbox
+{
+	max-width: 6.2em;
+	text-align: end;
+}
+
+.hex-textbox html|*.textbox-input
+{
+	text-transform: uppercase;
+}
+
+.textbox.combined
+{
+	max-width: 4em;
+	text-align: end;
+}
+
+.textbox.combined:not(:last-child)
+{
+	-moz-border-end: 0;
+}
+
+.textbox[focused]
+{
+	border-color: #5C5C5C;
+}
+
+.textbox.combined[focused] + .textbox.combined
+{
+	-moz-border-start-color: #5C5C5C;
+}
+
+.hsl-h-textbox:before,
+.hsl-s-textbox:before,
+.hsl-l-textbox:before,
+.hex-textbox:before,
+.rgb-r-textbox:before,
+.rgb-g-textbox:before,
+.rgb-b-textbox:before,
+.opacity-textbox:before
+{
+	display: -moz-box;
+	margin-top: 1px;
+	-moz-margin-start: 2px;
+	opacity: .6;
+}
+
+.opacity-textbox:before
+{
+	content: "Opacity";
+}
+
+.hex-textbox:before
+{
+	content: "#";
+}
+
+.rgb-r-textbox:before
+{
+	content: "R";
+}
+
+.rgb-g-textbox:before
+{
+	content: "G";
+}
+
+.rgb-b-textbox:before
+{
+	content: "B";
+}
+
+.hsl-h-textbox:before
+{
+	content: "H";
+}
+
+.hsl-s-textbox:before
+{
+	content: "S";
+}
+
+.hsl-l-textbox:before
+{
+	content: "L";
+}
+
+.colorPicker-hexContainer,
+.colorPicker-rgbContainer
+{
+	margin-bottom: 1em;
+}
+
+/* ::: Buttons ::: */
+
+button
+{
+	min-width: 5em;
+	padding: 3px 1em 4px;
+}
+/*
+button > .button-box
+{
+	padding: 4px 4px 5px !important;
+	margin: 0 !important;
+}*/
+
+.button
+{
+	min-width: 6em;
+	background-color: #CCC;
+}
+
+button[default]
+{
+	background-color: #005EAA;
+	color: #fff;
+	-moz-margin-end: .5em;
+}
+
+.button:not([disabled]):not([default]):hover:not([open])
+{
+	background-color: #D8D8D8;
+}
+
+.button[default]:hover:not(:active):not([open])
+{
+	background-image: linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2));
+}
+
+.button:not([disabled]):hover:active:not([open]),
+.button[open]
+{
+	background-color: #000;
+	color: #fff;
+}
+
+@keyframes fade-in
+{
+	from
+	{
+		background-color: rgba(0,0,0,0);
+	}
+	to
+	{
+		background-color: rgba(0,0,0,.4);
+	}
+}
+
+@keyframes fade-out
+{
+	from
+	{
+		background-color: rgba(0,0,0,.4);
+	}
+	to
+	{
+		background-color: rgba(0,0,0,0);
+	}
+}
+
+.popup-container
+{
+	-moz-box-pack: center;
+	animation-duration: .35s;
+	animation-name: fade-in;
+	animation-iteration-count: 1;
+	background-color: rgba(0,0,0,.4);
+}
+
+.popup-container[_hidden=true]
+{
+	animation-duration: .4s;
+	animation-name: fade-out;
+	animation-iteration-count: 1;
+	background-color: rgba(0,0,0,0);
+	visibility: collapse;
+}
+
+.popup-spacer
+{
+    min-height: 4em;
+}
+
+.popup-container > vbox
+{
+	padding: 1em 0;
+}
+
+.popup-container > vbox,
+.popup-container > deck
+{
+	-moz-box-align: center;
+    background: #fff;
+}
+
+.popup-container > deck > hbox
+{
+	padding: 1em 0;
+	-moz-box-pack: center;
+	-moz-box-align: center;
+}
+
+/* ::: Color preset paintbucker ::: */
+
+.color-preset-paintbucket
+{
+	min-height: 102px;
+	background-color: transparent;
+}
+
+.color-preset-paintbucket > stack
+{
+	width: 76px;
+	height: 76px;
+	background-color: #DEDEDE;
+}
+
+.paintbucket-preview-button
+{
+	margin: 0;
+	padding: 0;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset;
+}
+
+.paintbucket-preview-button > .button-box
+{
+	-moz-box-flex: 1;
+	background: -moz-image-rect(url(colorpicker/color-dropper.png), 0, 50%, 100%, 0) center center no-repeat;
+}
+
+.color-preset-paintbucket[inverted=true] .paintbucket-preview-button > .button-box
+{
+	background-image: -moz-image-rect(url(colorpicker/color-dropper.png), 0, 100%, 100%, 50%);
+}
+
+.paintbucket-preview-button:hover
+{
+    box-shadow: 0 0 0 4px #DEDEDE;
+}
+
+.paintbucket-preview-button:hover > .button-box
+{
+	box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset;
+}
+
+.paintbucket-preview-button:hover:active > .button-box
+{
+	margin: 2px;
+	background-size: 28px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset, 0 0 0 2px #DEDEDE;
+}
+
+.color-preset-paintbucket > .reset-button
+{
+	margin-top: .4em;
+ 	min-width: 0;
+}
+
+/* ::: Top settings ::: */
+
+#topsettings-hbox,
+#recentpresets-hbox,
+#settings-pane-presets,
+.block-me
+{
+	display: block;
+}
+
+.topSettings
+{
+	color: #fff;
+	padding: 0;
+	background: bottom 31px right no-repeat;
+	background-color: #ccc;
+	font-family: "Segoe UI Semilight";
+    box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset;
+}
+
+#topsettings-selectedtabs,
+#topsettings-tabs,
+#topsettings-toolbarbuttons
+{
+	min-height: 173px;
+	min-width: 173px;
+}
+
+#createpreset-preview
+{
+	-moz-box-flex: 1;
+	-moz-margin-end: 1em;
+	-moz-margin-start: calc(-145px + -1em);
+}
+
+.topSettings-preset
+{
+	background-repeat: no-repeat;
+}
+
+.topSettings > .button-box > .button-text
+{
+    min-width: 0;
+}
+
+.topSetting-preset-checkmark
+{
+	pointer-events: none;
+}
+
+.topSetting-backgroundContainer[selected] .topSetting-preset-checkmark
+{
+	box-shadow: 0 0 0 4px #6A6D75 inset;
+	background: url(check-right.png) top right 4px no-repeat;
+}
+
+.topSetting-backgroundContainer
+{
+	-moz-margin-end: 1.1em;
+	margin-bottom: 1.1em;
+}
+
+.topSetting-backgroundContainer:hover
+{
+	background-color: #DEDEDE;
+    box-shadow: 0 0 0 4px #DEDEDE;
+}
+
+.topSettings:hover:active,
+.topSetting-backgroundContainer:hover:active > .topSetting-preset-checkmark
+{
+	transform: scale(.96);
+}
+
+.topSettings:not(.color-preset) > .button-box
+{
+	padding: .2em .6em .3em;
+	background: #005EAA;
+	min-height: 31px;
+}
+
+#topsettings-selectedtabs
+{
+	background-color: #0082D4;
+	background-image: -moz-image-rect(url(topSettings.png), 0, 346, 162, 0);
+	background-size: 173px 81px;
+}
+
+#topsettings-selectedtabs[inverted=true]
+{
+	background-image: -moz-image-rect(url(topSettings.png), 0, 692, 162, 346);
+}
+
+#topsettings-tabs
+{
+	background-color: #009BF0;
+	background-image: -moz-image-rect(url(topSettings.png), 162, 346, 324, 0);
+	background-size: 173px 81px;
+}
+
+#topsettings-tabs[inverted=true]
+{
+	background-image: -moz-image-rect(url(topSettings.png), 162, 692, 324, 346);
+}
+
+#topsettings-toolbarbuttons
+{
+	background-color: #0068B7;
+	background-image: -moz-image-rect(url(topSettings.png), 324, 346, 532, 0);
+	background-size: 173px 104px;
+}
+
+#topsettings-toolbarbuttons[inverted=true]
+{
+	background-image: -moz-image-rect(url(topSettings.png), 324, 692, 532, 346);
+}
+
+.message
+{
+	color: #FF7E28;
+	margin: 0 0 1.5em;
+}
+
+.text-link
+{
+	margin: 0 0 1em 0;
+	color: #007ee6;
+	cursor: pointer;
+}
+
+description + .text-link
+{
+	margin-top: 1em;
+}
+
+.text-link:hover
+{
+	text-decoration: underline;
+}
+
+#import-export-presets
+{
+    display: block;
+}
+
+.new-preset-button-container
+{
+    max-height: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.newPreset
+{
+    background: #ccc url(add-large.png) center center no-repeat;
+}
+
+.newPreset:hover:active
+{
+	transform: scale(.96);
+}
+
+#fullpage-popup-deck
+{
+	background-repeat: no-repeat;
+	background-size: 100% 120px;
+	background-position: left top;
+	background-image: linear-gradient(#3176AE,#3176AE);
+	background-color: #fff;
+}
+
+.fullpage-popup > vbox
+{
+	padding: 3em;
+	-moz-box-flex: 1;
+	overflow: auto;
+}
+
+/*
+@keyframes slide-in
+{
+	from
+	{
+		padding-left: 2em;
+	}
+
+}
+
+.fullpage-popup[animate],
+#page-navigation-pane[animate]
+{
+	animation-duration: .3s;
+	animation-name: slide-in;
+	animation-iteration-count: 1;
+}*/

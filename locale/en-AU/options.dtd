@@ -1,0 +1,41 @@
+<!ENTITY title "Colorlicious settings">
+<!ENTITY cat.colors "Colours">
+<!ENTITY cat.settings "Settings">
+<!ENTITY cat.feedback "Support &amp; feedback">
+
+<!ENTITY preset.header "Choose a preset">
+<!ENTITY preset.import "Import a preset">
+<!ENTITY preset.browse "Browse">
+<!ENTITY preset.manage "Manage presets">
+<!ENTITY preset.warning "You currently have no presets to manage">
+<!ENTITY preset.export "Export">
+<!ENTITY preset.remove "Remove">
+
+<!ENTITY colorpreset.header "Choose a colour">
+<!ENTITY preset.name "Name your preset">
+
+<!ENTITY color "Fine-tune colour">
+<!ENTITY invalidvalue "A preset with that name already exists">
+<!ENTITY buttons "Toolbar buttons">
+<!ENTITY button.warning "Some toolbar buttons will only appear coloured on mouse over">
+<!ENTITY appbutton "Application button">
+<!ENTITY selectedTab "Active tab &amp; toolbars">
+<!ENTITY inactiveTab "Inactive tabs">
+<!ENTITY reset.long "Reset all colours">
+<!ENTITY content.reset.des "Here's what will happen:">
+<!ENTITY content.reset.bullet "All of your colour settings will be removed.">
+<!ENTITY content.reset.bullet1 "Your presets will remain untouched.">
+
+<!ENTITY topsettings.title0 "Try a whole new look">
+<!ENTITY topsettings.title1 "Start colouring">
+
+<!ENTITY feedback.title0 "Help make Colorlicious better">
+<!ENTITY feedback.title1 "Send us feedback">
+<!ENTITY feedback.desc0 "If you enjoy using Colorlicious, consider writing a review or making a small donation.">
+<!ENTITY feedback.desc1 "We are always looking to improve our addon. Feel free to leave feedback on our Google code page, or send us an email.">
+<!ENTITY feedback.link0 "Write a review on AMO">
+<!ENTITY feedback.link1 "Donate using PayPal">
+<!ENTITY feedback.link2 "Google code">
+<!ENTITY feedback.link3 "Send us an email">
+
+<!ENTITY settings.more "More settings">
