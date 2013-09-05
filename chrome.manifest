@@ -5,3 +5,4 @@ override chrome://colorlicious/skin/options/options.css skin/options/options-lin
 locale	colorlicious	en-US locale/en-US/
 locale	colorlicious	en-AU locale/en-AU/
 locale	colorlicious	en-GB locale/en-AU/
+locale	colorlicious	ru-RU locale/ru-RU/

@@ -1,0 +1,42 @@
+<!ENTITY title "Настройки Colorlicious">
+<!ENTITY cat.colors "Цвета">
+<!ENTITY cat.settings "Настройки">
+<!ENTITY cat.feedback "Поддержка и обратная связь">
+
+<!ENTITY preset.header "Выберите стиль">
+<!ENTITY preset.import "Импортировать стиль">
+<!ENTITY preset.browse "Обзор">
+<!ENTITY preset.manage "Управление стилями">
+<!ENTITY preset.warning "У вас сейчас нет изменяемых стилей">
+<!ENTITY preset.export "Экспортировать">
+<!ENTITY preset.remove "Удалить">
+
+<!ENTITY colorpreset.header "Выберите цвет">
+<!ENTITY preset.name "Имя вашего стиля">
+
+<!ENTITY color "Тонкая настройка цвета">
+<!ENTITY invalidvalue "Стиль с таким именем уже существует">
+<!ENTITY buttons "Кнопки на панели инструментов">
+<!ENTITY button.warning "Некоторые цвета кнопок на панели инструментов появляются при наведении мыши">
+<!ENTITY appbutton "Кнопка приложения">
+<!ENTITY selectedTab "Активная вкладка и панель инструментов">
+<!ENTITY inactiveTab "Неактивные вкладки">
+<!ENTITY reset.long "Сброс всех цветов">
+<!ENTITY content.reset.des "Вот то, что будет получится:">
+<!ENTITY content.reset.bullet "Ваши настройки цветов будут удалены.">
+<!ENTITY content.reset.bullet1 "Стили останутся нетронутыми.">
+
+<!ENTITY topsettings.title0 "Попробуйте совершенно новый вид">
+<!ENTITY topsettings.title1 "Приступить к раскрашиванию">
+<!ENTITY morepresets "Показать больше стилей">
+
+<!ENTITY feedback.title0 "Помогите сделать Colorlicious лучше">
+<!ENTITY feedback.title1 "Сообщите нам свое мнение">
+<!ENTITY feedback.desc0 "Если Вам понравится Colorlicious, почему бы Вам не оставить отзыв или сделать небольшое пожертвование.">
+<!ENTITY feedback.desc1 "Мы всегда стараемся улучшить наше дополнение. Не стесняйтесь оставлять отзывы на нашей странице Google Code или отправлять их нам по электронной почте.">
+<!ENTITY feedback.link0 "Напишите Ваше мнение о дополнении">
+<!ENTITY feedback.link1 "Пожертвовать с помощью Paypal">
+<!ENTITY feedback.link2 "Google code">
+<!ENTITY feedback.link3 "Отправьте нам электронное письмо">
+
+<!ENTITY settings.more "Больше настроек">

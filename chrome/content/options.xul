@@ -82,7 +82,7 @@
 					<description value='&topsettings.title0;' class='header'/>
 					<hbox id='recentpresets-hbox'>
 					</hbox>
-					<label class='text-link' value='Show more presets' onclick='fullscreenPopup.show(0);'/>
+					<label class='text-link' value='&morepresets;' onclick='fullscreenPopup.show(0);'/>
 					<description value='&topsettings.title1;' class='header'/>
 					<hbox id='topsettings-hbox'>
 						<vbox class='topSetting-backgroundContainer'>
