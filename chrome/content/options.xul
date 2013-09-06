@@ -150,7 +150,7 @@
 					<description>
 						&feedback.desc1;
 					</description>
-					<label class='text-link' value='&feedback.link2;' href='http://code.google.com/p/colorlicious/issues/list'/>
+					<label class='text-link' value='&feedback.link2;' href='https://github.com/SoapyHamHocks/Colorlicious/issues'/>
 					<label class='text-link' value='&feedback.link3;' href='mailto:soapyspew@gmail.com'/>
 				</vbox>
 			</vbox>

@@ -33,10 +33,10 @@
 <!ENTITY feedback.title0 "Помогите сделать Colorlicious лучше">
 <!ENTITY feedback.title1 "Сообщите нам свое мнение">
 <!ENTITY feedback.desc0 "Если Вам понравится Colorlicious, почему бы Вам не оставить отзыв или сделать небольшое пожертвование.">
-<!ENTITY feedback.desc1 "Мы всегда стараемся улучшить наше дополнение. Не стесняйтесь оставлять отзывы на нашей странице Google Code или отправлять их нам по электронной почте.">
+<!ENTITY feedback.desc1 "Мы всегда стараемся улучшить наше дополнение. Не стесняйтесь оставлять отзывы на нашей странице GitHub или отправлять их нам по электронной почте.">
 <!ENTITY feedback.link0 "Напишите Ваше мнение о дополнении">
 <!ENTITY feedback.link1 "Пожертвовать с помощью Paypal">
-<!ENTITY feedback.link2 "Google code">
+<!ENTITY feedback.link2 "GitHub">
 <!ENTITY feedback.link3 "Отправьте нам электронное письмо">
 
 <!ENTITY settings.more "Больше настроек">

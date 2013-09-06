@@ -1,5 +1,6 @@
 *.zip
 *.xpi
+*.cmd
 Thumbs.db
 Desktop.ini
 .DS_Store

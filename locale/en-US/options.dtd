@@ -33,10 +33,10 @@
 <!ENTITY feedback.title0 "Help make Colorlicious better">
 <!ENTITY feedback.title1 "Send us feedback">
 <!ENTITY feedback.desc0 "If you enjoy using Colorlicious, consider writing a review or making a small donation.">
-<!ENTITY feedback.desc1 "We are always looking to improve our addon. Feel free to leave feedback on our Google code page, or send us an email.">
+<!ENTITY feedback.desc1 "We are always looking to improve our addon. Feel free to leave feedback on our GitHub page, or send us an email.">
 <!ENTITY feedback.link0 "Write a review on AMO">
 <!ENTITY feedback.link1 "Donate using PayPal">
-<!ENTITY feedback.link2 "Google code">
+<!ENTITY feedback.link2 "GitHub">
 <!ENTITY feedback.link3 "Send us an email">
 
 <!ENTITY settings.more "More settings">
