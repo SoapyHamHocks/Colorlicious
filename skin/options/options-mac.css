@@ -964,7 +964,6 @@ button[default]
 	-moz-margin-end: 1.1em;
 	margin-bottom: 1.1em;
     border-radius: 4px;
-    /*background-image: url(colorpicker/trans.png);*/
 }
 
 .topSettings:not(.color-preset) > .button-box

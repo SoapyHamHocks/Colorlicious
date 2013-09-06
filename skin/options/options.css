@@ -669,12 +669,6 @@ button
 	min-width: 5em;
 	padding: 3px 1em 4px;
 }
-/*
-button > .button-box
-{
-	padding: 4px 4px 5px !important;
-	margin: 0 !important;
-}*/
 
 .button
 {
@@ -1006,21 +1000,3 @@ description + .text-link
 	-moz-box-flex: 1;
 	overflow: auto;
 }
-
-/*
-@keyframes slide-in
-{
-	from
-	{
-		padding-left: 2em;
-	}
-
-}
-
-.fullpage-popup[animate],
-#page-navigation-pane[animate]
-{
-	animation-duration: .3s;
-	animation-name: slide-in;
-	animation-iteration-count: 1;
-}*/

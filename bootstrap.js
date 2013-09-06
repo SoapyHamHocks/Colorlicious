@@ -876,9 +876,6 @@ var colorlicious =
 		def_prefs.setCharPref("tab","");
 		def_prefs.setCharPref("selectedtab","");
 		def_prefs.setCharPref("customPresets","");
-		def_prefs.setCharPref("hostOS", "");
-		def_prefs.setCharPref("TEST", "");
-		def_prefs.setBoolPref("uxChannel", false);
 		_prefs.getDefaultBranch("extensions.").setCharPref("Colorlicious@SoapySpew.description","chrome://colorlicious/locale/options.properties");
 		
 		// Enable syncing of prefs
@@ -888,23 +885,20 @@ var colorlicious =
 		sync_prefs.setBoolPref("selectedtab", true);
 		sync_prefs.setBoolPref("customPresets", true);
 		
-		//check for ux-channel, maybe this is a better way to check for this
+		//check for ux-channel, maybe there is a better way to check for this
 		try
 		{
 			if (_prefs.getDefaultBranch("app.").getCharPref('update.channel') == 'nightly-ux')
 			{
 				uxChannel = true;
-				//prefBranch.setBoolPref("uxChannel", true);
 			}
 		}
 		catch(e)
 		{
-			//uxChannel = false;
 		}
 		
 		// set hostOS
 		hostOS = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULRuntime).OS;
-		prefBranch.setCharPref("hostOS", hostOS);
 		
 		Prefs.enable();
 		this.firstRun = true;

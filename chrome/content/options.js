@@ -6,7 +6,6 @@ var appmenu_widget, tab_widget, selectedtab_widget, button_widget;
 var appmenu_presets, tab_presets, selectedtab_presets, button_presets;
 
 var colorPickerOpen = false;
-var hostOS = prefBranch.getCharPref('hostOS');
 
 Components.utils.import("resource://gre/modules/NetUtil.jsm");
 Components.utils.import("resource://gre/modules/FileUtils.jsm");
@@ -33,17 +32,6 @@ function init()
 	floatingPopup.init();
 	
 	leftPaneDeck(0);
-	
-	
-	// setup some animation listeners
-	/*var itemsToAnimate = ['page-settings-pane', 'page-importPrefs-pane', 'page-support-pane', 'page-navigation-pane'];
-	for (var i in itemsToAnimate)
-	{
-		$(itemsToAnimate[i]).addEventListener('animationend', function removeAtt()
-		{
-			this.removeAttribute('animate');
-		}, false);
-	}*/
 }
 
 var fullscreenPopup =
@@ -113,7 +101,6 @@ var floatingPopup =
 			// Create a new preset
 			case 1:
 				$('preset-name-textbox').focus();
-				
 		}
 	},
 	
@@ -460,8 +447,6 @@ var topSettingPresets =
 				{
 					this.removeEventListener('mouseup', msUp, false);
 					mouseDown = false;
-						
-					//button.doCommand();
 				}, false);	
 
 				this.setAttribute('active', true);
@@ -546,8 +531,6 @@ var managePresets =
 	
 	close: function()
 	{
-		//topSettingPresets.init('recentpresets-hbox', 173, 3);
-		//topSettingPresets.init("settings-pane-presets", 100);
 		fullscreenPopup.show(0);
 	}
 };
@@ -694,7 +677,6 @@ var bPreset =
 			
 			prefBranch.setCharPref('customPresets', JSON.stringify(newPref));
 			topSettingPresets.init("settings-pane-presets", 100);
-			//console.log(newPref);
 		});
 	},
 	
@@ -711,7 +693,6 @@ var bPreset =
 			return;
 			
 		this.updatePref();
-		//var data = this.customPresets;
 		
 		var file = fp.file;
 		
@@ -721,11 +702,8 @@ var bPreset =
 		converter.charset = "UTF-8";
 		var istream = converter.convertToInputStream(data);
 
-		// The last argument (the callback) is optional.
 		NetUtil.asyncCopy(istream, ostream, function(status) {
-			//console.log(status);
 		  if (!Components.isSuccessCode(status)) {
-			// Handle error!
 			return;
 		  }
 		});
