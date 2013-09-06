@@ -50,17 +50,11 @@ var fullscreenPopup =
 		{	
 			// Settings pane
 			case 0:
-				topSettingPresets.init("settings-pane-presets", 100);				
-				//$('page-settings-pane').setAttribute('animate', true);
+				topSettingPresets.init("settings-pane-presets", 100);
 				break;
 			// Manage presets
 			case 1:
 				managePresets.init();
-				// For some reason if we disable these buttons along with an animation very weird things happen...
-				//$('page-importPrefs-pane').setAttribute('animate', true);
-				break;
-			case 2:
-				//$('page-support-pane').setAttribute('animate', true);
 				break;
 		}
 		
@@ -431,30 +425,6 @@ var topSettingPresets =
 
 				}
 
-			}, false);
-		}
-		
-		var otherElements = ['topsettings-selectedtabs', 'topsettings-tabs', 'topsettings-toolbarbuttons'];
-		
-		for (var e in otherElements)
-		{
-			$(otherElements[e]).addEventListener('mousedown', function msDown(evt)
-			{
-				var mouseDown = true;
-				var button = this;
-						
-				this.addEventListener('mouseup', function msUp()
-				{
-					this.removeEventListener('mouseup', msUp, false);
-					mouseDown = false;
-				}, false);	
-
-				this.setAttribute('active', true);
-				this.addEventListener('animationend', function endAnimation()
-				{
-					this.removeEventListener('animationend', endAnimation, false);
-					button.removeAttribute('active', true);
-				}, false);
 			}, false);
 		}
 	}
