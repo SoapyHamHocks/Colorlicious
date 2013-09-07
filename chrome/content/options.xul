@@ -29,6 +29,7 @@
 	</commandset>
 	<stringbundleset>
 		<stringbundle id="colorlicious-strings" src="chrome://colorlicious/locale/options.properties"/>
+		<stringbundle id="dialog-strings" src="chrome://global/locale/dialog.properties"/>
 	</stringbundleset>
 	<stack id='main-stack' orient='vertical' flex='1'>
 		<hbox>

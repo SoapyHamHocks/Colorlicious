@@ -162,6 +162,7 @@ function floatingPopupMessage(message, aCallback)
 
 	var _init = function ()
 	{
+		var dialogStrings = $('dialog-strings');
 		while (container.hasChildNodes())
 			container.removeChild(container.firstChild);
 			
@@ -181,7 +182,7 @@ function floatingPopupMessage(message, aCallback)
 		hbox.pack = 'end';
 		
 		button = document.createElement('button');
-		button.setAttribute('label', 'OK');
+		button.setAttribute('label', dialogStrings.getString('button-accept'));
 		button.className = 'button';
 		button.addEventListener('command', onAccept, false);
 		button.setAttribute('default', true);
@@ -191,7 +192,7 @@ function floatingPopupMessage(message, aCallback)
 		if (aCallback)
 		{
 			cancelButton = document.createElement('button');
-			cancelButton.setAttribute('label', 'Cancel');
+			cancelButton.setAttribute('label', dialogStrings.getString('button-cancel'));
 			cancelButton.className = 'button';
 			
 			cancelButton.addEventListener('command', onCancel, false);
