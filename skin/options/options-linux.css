@@ -6,3 +6,8 @@
 {
 	display: none;
 }
+
+.button-box > .button-icon
+{
+	display: -moz-box;
+}
