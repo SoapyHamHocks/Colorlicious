@@ -11,3 +11,8 @@
 {
 	display: -moz-box;
 }
+
+.pane-radio
+{
+	-moz-padding-start: calc(4.8em - 4px);
+}
